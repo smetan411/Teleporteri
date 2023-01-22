@@ -1,4 +1,12 @@
 name: Teleporteri
 version: '${project.version}'
-main: teleporteri.MainTeleporteri
+main: hra.Main
 api-version: 1.18
+
+commands:
+  _Duch:
+  _Golem:
+  _Lucistnik:
+  _Ohnivak:
+  _Vidlak:
+  _MecNaTeleportery:

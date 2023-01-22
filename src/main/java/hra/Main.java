@@ -1,9 +1,11 @@
-package teleporteri;
+package hra;
 
-import teleporteri.listenery.*;
+import hra.commands.*;
+import hra.listenery.*;
+import hra.vybava.MecNaTeleportery;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class MainTeleporteri extends JavaPlugin {
+public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
@@ -16,5 +18,14 @@ public class MainTeleporteri extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SmrtHrace(), this);
         getServer().getPluginManager().registerEvents(new RespawnHrace(), this);
         getServer().getPluginManager().registerEvents(new PripojeniListener(), this);
+        getServer().getPluginManager().registerEvents(new TeleporteriNesmrtelnost(), this);
+
+        //commands
+        getCommand("_Duch").setExecutor(new Duch());
+        getCommand("_Golem").setExecutor(new Golem());
+        getCommand("_Lucistnik").setExecutor(new Lucistnik());
+        getCommand("_Ohnivak").setExecutor(new Ohnivak());
+        getCommand("_Vidlak").setExecutor(new Vidlak());
+        getCommand("_MecNaTeleportery").setExecutor(new MecNaTeleportery());
     }
 }

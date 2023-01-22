@@ -1,4 +1,4 @@
-package teleporteri.vybava;
+package hra.vybava;
 
 import org.bukkit.Color;
 import org.bukkit.Material;

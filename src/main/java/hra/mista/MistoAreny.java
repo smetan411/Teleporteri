@@ -1,4 +1,4 @@
-package teleporteri.mista;
+package hra.mista;
 
 import org.bukkit.Location;
 import org.bukkit.World;

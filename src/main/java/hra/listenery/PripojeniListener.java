@@ -1,6 +1,6 @@
-package teleporteri.listenery;
+package hra.listenery;
 
-import teleporteri.mista.MistoLobby;
+import hra.mista.MistoLobby;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;

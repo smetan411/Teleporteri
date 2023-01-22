@@ -1,6 +1,6 @@
-package teleporteri.listenery;
+package hra.listenery;
 
-import teleporteri.mista.MistoLobby;
+import hra.mista.MistoLobby;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,5 +13,7 @@ public class RespawnHrace implements Listener {
         Player player = respawnEvent.getPlayer();
         var mistoLoby = new MistoLobby(player.getWorld());
         respawnEvent.setRespawnLocation(mistoLoby.get());
+        player.teleport(mistoLoby.get());
+        player.getInventory().clear();
     }
 }
