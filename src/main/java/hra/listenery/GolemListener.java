@@ -1,6 +1,7 @@
 package hra.listenery;
 
 import hra.mista.MistoAreny;
+import hra.vybava.MecNaTeleportery;
 import hra.vybava.VybavaGolem;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -18,37 +19,30 @@ public class GolemListener implements Listener {
     public void uderDoTeleportera(EntityDamageByEntityEvent event) {
 
         if (!(event.getDamager() instanceof Player)) return;
-        var hrac = (Player) event.getDamager();
+        Player hrac = (Player) event.getDamager();
         var mistoAreny = new MistoAreny(hrac.getWorld());
-        var vesnican = event.getEntity();
-        var jmenoVesnicana = vesnican.getCustomName();
+        var teleporter = event.getEntity();
+        var jmenoTeleportera = teleporter.getCustomName();
 
-        if (Teleporteri.GOLEM.getJmeno().equals(jmenoVesnicana)) {
-            if ((Teleporteri.GOLEM.getJmeno().equals(event.getEntity().getCustomName())) &&
-                    ((MEC_NA_TELEPORTERY.equals(hrac.getInventory().getItemInMainHand().getItemMeta().getDisplayName())))) {
-                event.getEntity().remove();
-            } else {
-                var vybavaGolem = new VybavaGolem();
-                hrac.teleport(mistoAreny.get());
-                hrac.sendMessage("Byl jsi úspěšně připojen do hry.");
-                hrac.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 999999999, 0, true, false, false));
-                hrac.getInventory().clear();
-                hrac.getInventory().setBoots(vybavaGolem.vyrobGolemBoty());
-                hrac.getInventory().setHelmet(vybavaGolem.vyrobGolemDyne());
-                hrac.getInventory().setLeggings(vybavaGolem.vyrobGolemKalhoty());
-                hrac.getInventory().setChestplate(vybavaGolem.vyrobGolemBrneni());
-                hrac.getInventory().addItem(vybavaGolem.vyrobGolemMec());
-                hrac.getInventory().addItem(vybavaGolem.vyrobEnderPerlu());
-                hrac.getInventory().addItem(vybavaGolem.vyrobJabka());
-                hrac.getInventory().addItem(vybavaGolem.vyrobSekeru());
-                hrac.getInventory().setItemInOffHand(vybavaGolem.vyrobGolemStit());
-
-                if (vesnican instanceof LivingEntity) {
-                    LivingEntity zijciVesnican = (LivingEntity) vesnican;
-                    zijciVesnican.addPotionEffect(new PotionEffect(PotionEffectType.HEAL, 10, 5));
-                }
-            }
+        if (Teleporteri.GOLEM.getJmeno().equals(jmenoTeleportera)  &&   !MecNaTeleportery.mamMecNaTeleportery(hrac)) {
+            var vybavaGolem = new VybavaGolem();
+            hrac.teleport(mistoAreny.get());
+            hrac.sendMessage("Byl jsi úspěšně připojen do hry.");
+            hrac.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 999999999, 5, true, false, false));
+            hrac.getInventory().clear();
+            hrac.getInventory().setBoots(vybavaGolem.vyrobGolemBoty());
+            hrac.getInventory().setHelmet(vybavaGolem.vyrobGolemDyne());
+            hrac.getInventory().setLeggings(vybavaGolem.vyrobGolemKalhoty());
+            hrac.getInventory().setChestplate(vybavaGolem.vyrobGolemBrneni());
+            hrac.getInventory().addItem(vybavaGolem.vyrobGolemMec());
+            hrac.getInventory().setItemInOffHand(vybavaGolem.vyrobGolemStit());
+            hrac.getInventory().addItem(vybavaGolem.vyrobSekeru());
+            hrac.getInventory().addItem(vybavaGolem.vyrobJabka());
+            hrac.getInventory().addItem(vybavaGolem.vyrobEnderPerlu());
+            event.setCancelled(true);
         }
     }
 }
+
+
 

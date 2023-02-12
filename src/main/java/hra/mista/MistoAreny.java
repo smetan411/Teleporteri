@@ -12,7 +12,7 @@ public class MistoAreny {
     }
 
 
-    public Location get(){
+    public Location get() {
         return new Location(world, 808, 64, 1113);
     }
 }

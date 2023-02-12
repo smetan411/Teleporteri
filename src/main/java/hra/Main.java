@@ -18,7 +18,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SmrtHrace(), this);
         getServer().getPluginManager().registerEvents(new RespawnHrace(), this);
         getServer().getPluginManager().registerEvents(new PripojeniListener(), this);
-        getServer().getPluginManager().registerEvents(new TeleporteriNesmrtelnost(), this);
+
 
         //commands
         getCommand("_Duch").setExecutor(new Duch());

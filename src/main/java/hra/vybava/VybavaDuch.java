@@ -8,7 +8,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class VybavaDuch {
 
-    public static ItemStack vyrobMec() {
+    public ItemStack vyrobMec() {
         var mec = new ItemStack(Material.DIAMOND_SWORD);
         mec.addEnchantment(Enchantment.MENDING,1);
         var itemMeta = mec.getItemMeta();
@@ -19,15 +19,15 @@ public class VybavaDuch {
         return mec;
     }
 
-    public static ItemStack vyrobEnderPerlu() {
+    public ItemStack vyrobEnderPerlu() {
         return new ItemStack(Material.ENDER_PEARL);
     }
 
-    public static ItemStack vyrobJabka() {
+    public ItemStack vyrobJabka() {
         return new ItemStack(Material.GOLDEN_APPLE, 6);
     }
 
-    public static ItemStack vyrobSekeru() {
+    public ItemStack vyrobSekeru() {
         var sekera = new ItemStack(Material.DIAMOND_AXE);
         sekera.addEnchantment(Enchantment.MENDING,1);
         var itemMeta = sekera.getItemMeta();

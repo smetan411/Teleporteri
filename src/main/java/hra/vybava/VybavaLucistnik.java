@@ -83,10 +83,10 @@ public class VybavaLucistnik {
 
     public ItemStack vyrobLucistnikKus() {
         var lucistnikovaKus = new ItemStack(Material.CROSSBOW, 1);
-        lucistnikovaKus.addEnchantment(Enchantment.MULTISHOT, 1);
-        lucistnikovaKus.addEnchantment(Enchantment.QUICK_CHARGE, 3);
-        lucistnikovaKus.addEnchantment(Enchantment.ARROW_FIRE, 1);
-        lucistnikovaKus.addEnchantment(Enchantment.ARROW_INFINITE, 1);
+//        lucistnikovaKus.addEnchantment(Enchantment.MULTISHOT, 1);
+//        lucistnikovaKus.addEnchantment(Enchantment.QUICK_CHARGE, 3);
+//        lucistnikovaKus.addEnchantment(Enchantment.ARROW_FIRE, 1);
+//        lucistnikovaKus.addEnchantment(Enchantment.ARROW_INFINITE, 1);
         var itemMeta = lucistnikovaKus.getItemMeta();
         itemMeta.setUnbreakable(true);
         itemMeta.setDisplayName("Lucistnikova Kus");

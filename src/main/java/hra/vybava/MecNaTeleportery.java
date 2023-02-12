@@ -7,7 +7,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 
 public class MecNaTeleportery implements CommandExecutor {
@@ -19,7 +18,7 @@ public class MecNaTeleportery implements CommandExecutor {
         if (!(commandSender instanceof Player)) return false;
         var player = (Player) commandSender;
 
-        var mecNaTeleportery = new ItemStack(Material.GOLDEN_SWORD);
+        ItemStack mecNaTeleportery = new ItemStack(Material.GOLDEN_SWORD);
         var itemMeta = mecNaTeleportery.getItemMeta();
         itemMeta.setDisplayName(MEC_NA_TELEPORTERY);
         itemMeta.setUnbreakable(true);
@@ -28,6 +27,14 @@ public class MecNaTeleportery implements CommandExecutor {
         mecNaTeleportery.setItemMeta(itemMeta);
         player.getInventory().addItem(mecNaTeleportery);
         return true;
+    }
+
+    public static boolean mamMecNaTeleportery(Player player) {
+        var itemMeta = player.getInventory().getItemInMainHand().getItemMeta();
+        if (itemMeta == null) {
+            return false;
+        }
+        return MEC_NA_TELEPORTERY.equals(itemMeta.getDisplayName());
     }
 
 }
