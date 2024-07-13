@@ -12,7 +12,7 @@ public class VybavaOhnivak {
 
     public ItemStack vyrobOhnivakBoty() {
         var ohnivakovyBoty = new ItemStack(Material.LEATHER_BOOTS, 1);
-        ohnivakovyBoty.addEnchantment(Enchantment.PROTECTION_FIRE, 1);
+        ohnivakovyBoty.addEnchantment(Enchantment.FIRE_PROTECTION, 1);
         // tvorba barev:
         LeatherArmorMeta meta = (LeatherArmorMeta) ohnivakovyBoty.getItemMeta();
         meta.setColor(Color.RED);
@@ -29,7 +29,7 @@ public class VybavaOhnivak {
 
     public ItemStack vyrobOhnivakKalhoty() {
         var ohnivakovyKalhoty = new ItemStack(Material.LEATHER_LEGGINGS, 1);
-        ohnivakovyKalhoty.addEnchantment(Enchantment.PROTECTION_FIRE, 1);
+        ohnivakovyKalhoty.addEnchantment(Enchantment.FIRE_PROTECTION, 1);
         // tvorba barev:
         LeatherArmorMeta meta = (LeatherArmorMeta) ohnivakovyKalhoty.getItemMeta();
         meta.setColor(Color.RED);
@@ -46,7 +46,7 @@ public class VybavaOhnivak {
 
     public ItemStack vyrobOhnivakBrneni() {
         var ohnivakovoBrneni = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
-        ohnivakovoBrneni.addEnchantment(Enchantment.PROTECTION_FIRE, 1);
+        ohnivakovoBrneni.addEnchantment(Enchantment.FIRE_PROTECTION, 1);
         // tvorba barev:
         LeatherArmorMeta meta = (LeatherArmorMeta) ohnivakovoBrneni.getItemMeta();
         meta.setColor(Color.RED);
@@ -63,7 +63,7 @@ public class VybavaOhnivak {
 
     public ItemStack vyrobOhnivakHelma() {
         var ohnivakovaHelma = new ItemStack(Material.LEATHER_HELMET, 1);
-        ohnivakovaHelma.addEnchantment(Enchantment.PROTECTION_FIRE, 1);
+        ohnivakovaHelma.addEnchantment(Enchantment.FIRE_PROTECTION, 1);
         // tvorba barev:
         LeatherArmorMeta meta = (LeatherArmorMeta) ohnivakovaHelma.getItemMeta();
         meta.setColor(Color.RED);
@@ -102,8 +102,8 @@ public class VybavaOhnivak {
 
     public ItemStack vyrobLuk() {
         var luk = new ItemStack(Material.BOW);
-        luk.addEnchantment(Enchantment.ARROW_INFINITE, 1);
-        luk.addEnchantment(Enchantment.ARROW_FIRE, 1);
+        luk.addEnchantment(Enchantment.INFINITY, 1);
+        luk.addEnchantment(Enchantment.FLAME, 1);
         var itemMeta = luk.getItemMeta();
         itemMeta.setUnbreakable(true);
         luk.setItemMeta(itemMeta);
