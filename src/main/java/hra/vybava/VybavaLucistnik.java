@@ -107,8 +107,8 @@ public class VybavaLucistnik {
 
     public ItemStack vyrobLuk() {
         var luk = new ItemStack(Material.BOW);
-        luk.addEnchantment(Enchantment.ARROW_INFINITE, 1);
-        luk.addEnchantment(Enchantment.ARROW_DAMAGE, 5);
+        luk.addEnchantment(Enchantment.INFINITY, 1);
+        luk.addEnchantment(Enchantment.POWER, 5);
         var itemMeta = luk.getItemMeta();
         itemMeta.setUnbreakable(true);
         luk.setItemMeta(itemMeta);
