@@ -2,7 +2,7 @@ package hra;
 
 import hra.commands.*;
 import hra.listenery.*;
-import hra.vybava.MecNaTeleportery;
+import hra.commands.MecNaTeleportery;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {

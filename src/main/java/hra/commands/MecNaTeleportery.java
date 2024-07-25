@@ -1,4 +1,4 @@
-package hra.vybava;
+package hra.commands;
 
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
@@ -15,6 +15,7 @@ public class MecNaTeleportery implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+        if (!(commandSender.isOp())) return false;
         if (!(commandSender instanceof Player)) return false;
         var player = (Player) commandSender;
 

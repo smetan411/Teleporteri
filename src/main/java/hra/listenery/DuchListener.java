@@ -1,19 +1,14 @@
 package hra.listenery;
 
 import hra.mista.MistoAreny;
-import hra.vybava.MecNaTeleportery;
+import hra.commands.MecNaTeleportery;
 import hra.vybava.VybavaDuch;
-import hra.vybava.VybavaGolem;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-
-import static hra.vybava.MecNaTeleportery.MEC_NA_TELEPORTERY;
-import static hra.vybava.MecNaTeleportery.mamMecNaTeleportery;
 
 public class DuchListener implements Listener {
 
