@@ -13,6 +13,7 @@ import org.bukkit.entity.Villager;
 public class Golem implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+        if (!commandSender.isOp()) return false;
         if (!(commandSender instanceof Player)) return false;
         Player player = (Player) commandSender;
         vytvorGolema(player.getWorld(), player.getLocation());

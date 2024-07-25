@@ -14,6 +14,7 @@ public class Duch implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+        if (!commandSender.isOp()) return false;
         if (!(commandSender instanceof Player)) return false;
         Player player = (Player) commandSender;
         vytvorDucha(player.getWorld(), player.getLocation());

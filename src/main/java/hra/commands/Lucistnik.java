@@ -14,6 +14,7 @@ public class Lucistnik implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+        if (!commandSender.isOp()) return false;
         if (!(commandSender instanceof Player)) return false;
         Player player = (Player) commandSender;
         vytvorLucistnika(player.getWorld(), player.getLocation());
