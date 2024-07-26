@@ -15,8 +15,8 @@ public class DuchListener implements Listener {
     @EventHandler
     public void uderDoTeleportera(EntityDamageByEntityEvent event) {
 
-        if (!(event.getDamager() instanceof Player)) return;
-        Player hrac = (Player) event.getDamager();
+        if (!(event.getDamager() instanceof Player hrac)) return;
+      //  Player hrac = (Player) event.getDamager();
         var mistoAreny = new MistoAreny(hrac.getWorld());
         var teleporter = event.getEntity();
         var jmenoTeleportera = teleporter.getCustomName();

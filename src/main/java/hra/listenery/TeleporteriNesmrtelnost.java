@@ -13,8 +13,7 @@ public class TeleporteriNesmrtelnost implements Listener {
     @EventHandler
     public void nastavNesmrtelnost(EntityDamageByEntityEvent udalost) {
 
-        var utocnik = (Player) udalost.getDamager();
-
+        if (!(udalost.getDamager() instanceof Player utocnik)) return;
 
         if ((Teleporteri.LUCISTNIK.getJmeno().equals(udalost.getEntity().getCustomName())) &&
                 (!(MEC_NA_TELEPORTERY.equals(utocnik.getInventory().getItemInMainHand().getItemMeta().getDisplayName())))) {

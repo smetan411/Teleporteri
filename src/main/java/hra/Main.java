@@ -9,6 +9,7 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         //Listenery
         getServer().getPluginManager().registerEvents(new VidlakListener(), this);
         getServer().getPluginManager().registerEvents(new GolemListener(), this);
