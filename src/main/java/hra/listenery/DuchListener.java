@@ -25,7 +25,6 @@ public class DuchListener implements Listener {
             var vybavaDuch = new VybavaDuch();
             hrac.teleport(mistoAreny.get());
             hrac.sendMessage("Byl jsi úspěšně připojen do hry.");
-            hrac.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 999999999, 5, true, false, false));
             hrac.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 999999999, 0, true, false, false));
             hrac.getInventory().clear();
             hrac.getInventory().addItem(vybavaDuch.vyrobMec());

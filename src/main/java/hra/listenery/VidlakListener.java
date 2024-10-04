@@ -26,7 +26,6 @@ public class VidlakListener implements Listener {
             var vybavaVidlak = new VybavaVidlak();
             hrac.teleport(mistoAreny.get());
             hrac.sendMessage("Byl jsi úspěšně připojen do hry.");
-            hrac.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 999999999, 5, true, false, false));
             hrac.getInventory().clear();
             hrac.getInventory().setBoots(vybavaVidlak.vyrobBoty());
             hrac.getInventory().setHelmet(vybavaVidlak.vyrobHelmu());

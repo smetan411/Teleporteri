@@ -20,7 +20,7 @@ public class VybavaDuch {
     }
 
     public ItemStack vyrobEnderPerlu() {
-        return new ItemStack(Material.ENDER_PEARL);
+        return new ItemStack(Material.ENDER_PEARL, 10);
     }
 
     public ItemStack vyrobJabka() {

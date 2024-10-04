@@ -25,7 +25,6 @@ public class OhnivakListener implements Listener {
             var vybavaOhnivak = new VybavaOhnivak();
             hrac.teleport(mistoAreny.get());
             hrac.sendMessage("Byl jsi úspěšně připojen do hry.");
-            hrac.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 999999999, 5, true, false, false));
             hrac.getInventory().clear();
             hrac.getInventory().setBoots(vybavaOhnivak.vyrobOhnivakBoty());
             hrac.getInventory().setHelmet(vybavaOhnivak.vyrobOhnivakHelma());

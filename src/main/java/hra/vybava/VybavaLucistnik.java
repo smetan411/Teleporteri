@@ -83,15 +83,11 @@ public class VybavaLucistnik {
 
     public ItemStack vyrobLucistnikKus() {
         var lucistnikovaKus = new ItemStack(Material.CROSSBOW, 1);
-//        lucistnikovaKus.addEnchantment(Enchantment.MULTISHOT, 1);
-//        lucistnikovaKus.addEnchantment(Enchantment.QUICK_CHARGE, 3);
-//        lucistnikovaKus.addEnchantment(Enchantment.ARROW_FIRE, 1);
-//        lucistnikovaKus.addEnchantment(Enchantment.ARROW_INFINITE, 1);
+        lucistnikovaKus.addEnchantment(Enchantment.MULTISHOT, 1);
+        lucistnikovaKus.addEnchantment(Enchantment.QUICK_CHARGE, 3);
         var itemMeta = lucistnikovaKus.getItemMeta();
         itemMeta.setUnbreakable(true);
         itemMeta.setDisplayName("Lucistnikova Kus");
-        AttributeModifier attributeModifier = new AttributeModifier("Defence", 7, AttributeModifier.Operation.ADD_NUMBER);
-        itemMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, attributeModifier);
         lucistnikovaKus.setItemMeta(itemMeta);
         return lucistnikovaKus;
     }
@@ -108,7 +104,7 @@ public class VybavaLucistnik {
     public ItemStack vyrobLuk() {
         var luk = new ItemStack(Material.BOW);
         luk.addEnchantment(Enchantment.INFINITY, 1);
-        luk.addEnchantment(Enchantment.POWER, 5);
+        luk.addEnchantment(Enchantment.POWER, 3);
         var itemMeta = luk.getItemMeta();
         itemMeta.setUnbreakable(true);
         luk.setItemMeta(itemMeta);

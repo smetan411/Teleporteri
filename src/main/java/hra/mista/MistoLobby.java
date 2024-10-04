@@ -8,6 +8,7 @@ public class MistoLobby {
     private final World world;
 
     public MistoLobby(World world) {
+
         this.world = world;
     }
 
