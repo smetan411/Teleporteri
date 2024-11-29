@@ -1,6 +1,7 @@
 package hra.commands;
 
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.command.Command;
@@ -20,22 +21,24 @@ public class MecNaTeleportery implements CommandExecutor {
         var player = (Player) commandSender;
 
         ItemStack mecNaTeleportery = new ItemStack(Material.GOLDEN_SWORD);
-        var itemMeta = mecNaTeleportery.getItemMeta();
-        itemMeta.setDisplayName(MEC_NA_TELEPORTERY);
-        itemMeta.setUnbreakable(true);
-        AttributeModifier attributeModifier = new AttributeModifier("Damage", 5, AttributeModifier.Operation.ADD_NUMBER);
-        itemMeta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, attributeModifier);
-        mecNaTeleportery.setItemMeta(itemMeta);
+        var vlastnosti = mecNaTeleportery.getItemMeta();
+        vlastnosti.setDisplayName(MEC_NA_TELEPORTERY);
+        vlastnosti.setUnbreakable(true);
+       // AttributeModifier attributeModifier = new AttributeModifier("Damage", 5, AttributeModifier.Operation.ADD_NUMBER); // do verze 1.21.1
+       // AttributeModifier attributeModifier = new AttributeModifier(NamespacedKey.minecraft("Deffense"), 5, AttributeModifier.Operation.ADD_NUMBER // od verye 1.21.1);
+        AttributeModifier attributeModifier = new AttributeModifier(NamespacedKey.minecraft("mec"), 1, AttributeModifier.Operation.ADD_NUMBER );
+        vlastnosti.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, attributeModifier);
+        mecNaTeleportery.setItemMeta(vlastnosti);
         player.getInventory().addItem(mecNaTeleportery);
         return true;
     }
 
     public static boolean mamMecNaTeleportery(Player player) {
-        var itemMeta = player.getInventory().getItemInMainHand().getItemMeta();
-        if (itemMeta == null) {
+        var vlastnosti = player.getInventory().getItemInMainHand().getItemMeta();
+        if (vlastnosti == null) {
             return false;
         }
-        return MEC_NA_TELEPORTERY.equals(itemMeta.getDisplayName());
+        return MEC_NA_TELEPORTERY.equals(vlastnosti.getDisplayName());
     }
 
 }

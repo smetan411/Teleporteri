@@ -16,7 +16,6 @@ public class DuchListener implements Listener {
     public void uderDoTeleportera(EntityDamageByEntityEvent event) {
 
         if (!(event.getDamager() instanceof Player hrac)) return;
-      //  Player hrac = (Player) event.getDamager();
         var mistoAreny = new MistoAreny(hrac.getWorld());
         var teleporter = event.getEntity();
         var jmenoTeleportera = teleporter.getCustomName();
@@ -25,7 +24,7 @@ public class DuchListener implements Listener {
             var vybavaDuch = new VybavaDuch();
             hrac.teleport(mistoAreny.get());
             hrac.sendMessage("Byl jsi úspěšně připojen do hry.");
-            hrac.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 999999999, 0, true, false, false));
+            hrac.addPotionEffect(new PotionEffect(PotionEffectType.INVISIBILITY, 999999999, 1, true, false, false));
             hrac.getInventory().clear();
             hrac.getInventory().addItem(vybavaDuch.vyrobMec());
             hrac.getInventory().addItem(vybavaDuch.vyrobSekeru());

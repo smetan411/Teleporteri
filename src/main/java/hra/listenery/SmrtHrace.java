@@ -16,8 +16,5 @@ public class SmrtHrace implements Listener {
         event.getDrops().clear();
         event.getDrops().add(jablko);
         event.getDrops().add(enderPerla);
-        var player = event.getEntity();
-        player.getInventory().clear();
-        player.setGameMode(GameMode.ADVENTURE);
     }
 }

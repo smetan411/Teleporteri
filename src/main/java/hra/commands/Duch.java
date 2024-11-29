@@ -26,4 +26,22 @@ public class Duch implements CommandExecutor {
         duch.setCustomName(Teleporteri.DUCH.getJmeno());
         duch.setAI(false);
     }
+
+     /*
+    pro novou verzi:
+    @Override
+    public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
+        if (!commandSender.isOp())return false;
+        if (! (commandSender instanceof Player))return false;
+        Player player = (Player) commandSender;
+        vytvorGolema(player.getWorld(),player.getLocation());
+        return true;
+    }
+
+    public void vytvorGolema(World world, Location location){
+      var golem = world.spawn(location, Villager.class);
+      golem.customName(Component.text(Teleporteri.GOLEM.getJmeno()));
+      golem.setAI(false);
+    }
+     */
 }

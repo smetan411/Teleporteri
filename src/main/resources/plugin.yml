@@ -1,7 +1,7 @@
 name: Teleporteri
 version: '${project.version}'
 main: hra.Main
-api-version: 1.20
+api-version: 1.21
 
 commands:
   _Duch:
