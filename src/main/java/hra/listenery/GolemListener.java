@@ -3,6 +3,7 @@ package hra.listenery;
 import hra.mista.MistoAreny;
 import hra.commands.MecNaTeleportery;
 import hra.vybava.VybavaGolem;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -35,6 +36,7 @@ public class GolemListener implements Listener {
             hrac.getInventory().addItem(vybavaGolem.vyrobSekeru());
             hrac.getInventory().addItem(vybavaGolem.vyrobJabka());
             hrac.getInventory().addItem(vybavaGolem.vyrobEnderPerlu());
+            hrac.setGameMode(GameMode.ADVENTURE);
             event.setCancelled(true);
         }
     }

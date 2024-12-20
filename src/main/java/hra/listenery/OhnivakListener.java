@@ -3,6 +3,7 @@ package hra.listenery;
 import hra.mista.MistoAreny;
 import hra.commands.MecNaTeleportery;
 import hra.vybava.VybavaOhnivak;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -37,6 +38,7 @@ public class OhnivakListener implements Listener {
             hrac.getInventory().addItem(vybavaOhnivak.vyrobSip());
             hrac.getInventory().addItem(vybavaOhnivak.vyrobJabka());
             hrac.getInventory().addItem(vybavaOhnivak.vyrobEnderPerlu());
+            hrac.setGameMode(GameMode.ADVENTURE);
             event.setCancelled(true);
         }
     }

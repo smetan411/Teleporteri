@@ -3,6 +3,7 @@ package hra.listenery;
 import hra.mista.MistoAreny;
 import hra.commands.MecNaTeleportery;
 import hra.vybava.VybavaLucistnik;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -38,6 +39,7 @@ public class LucistnikListener implements Listener {
             hrac.getInventory().addItem(vybavaLucistnik.vyrobLucistnikKus());
             hrac.getInventory().addItem(vybavaLucistnik.vyrobJabka());
             hrac.getInventory().addItem(vybavaLucistnik.vyrobEnderPerlu());
+            hrac.setGameMode(GameMode.ADVENTURE);
             event.setCancelled(true);
         }
     }

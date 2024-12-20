@@ -3,6 +3,7 @@ package hra.listenery;
 import hra.mista.MistoAreny;
 import hra.commands.MecNaTeleportery;
 import hra.vybava.VybavaVidlak;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -38,6 +39,7 @@ public class VidlakListener implements Listener {
             hrac.getInventory().addItem(vybavaVidlak.vyrobSip());
             hrac.getInventory().addItem(vybavaVidlak.vyrobJabka());
             hrac.getInventory().addItem(vybavaVidlak.vyrobEnderPerlu());
+            hrac.setGameMode(GameMode.ADVENTURE);
             event.setCancelled(true);
         }
     }

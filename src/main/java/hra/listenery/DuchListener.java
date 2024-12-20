@@ -3,6 +3,7 @@ package hra.listenery;
 import hra.mista.MistoAreny;
 import hra.commands.MecNaTeleportery;
 import hra.vybava.VybavaDuch;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -30,6 +31,7 @@ public class DuchListener implements Listener {
             hrac.getInventory().addItem(vybavaDuch.vyrobSekeru());
             hrac.getInventory().addItem(vybavaDuch.vyrobJabka());
             hrac.getInventory().addItem(vybavaDuch.vyrobEnderPerlu());
+            hrac.setGameMode(GameMode.ADVENTURE);
             event.setCancelled(true);
         }
     }
